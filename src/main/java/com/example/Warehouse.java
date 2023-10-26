@@ -1,16 +1,16 @@
 package com.example;
 
-import java.util.HashSet;
 import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class Warehouse {
 
     private static Warehouse instance;
-    private final Set<User> users = new HashSet<>();
+    private final Set<User> users = ConcurrentHashMap.newKeySet();
 
     private Warehouse() {}
 
-    public static Warehouse getInstance() {
+    public static synchronized Warehouse getInstance() {
         if (instance == null) {
             instance = new Warehouse();
         }
