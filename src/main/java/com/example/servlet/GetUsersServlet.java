@@ -32,7 +32,7 @@ public class GetUsersServlet extends HttpServlet {
     }
 
     private void forward(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(AppConstant.USERS_JSP);
+        RequestDispatcher dispatcher = req.getRequestDispatcher(AppConstant.USERS_JSP);
         dispatcher.forward(req, resp);
     }
 }

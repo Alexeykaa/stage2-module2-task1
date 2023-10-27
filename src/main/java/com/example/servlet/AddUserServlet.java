@@ -27,7 +27,7 @@ public class AddUserServlet extends HttpServlet {
     }
 
     private void forward(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(AppConstant.ADD_USER_JSP);
+        RequestDispatcher dispatcher = req.getRequestDispatcher(AppConstant.ADD_USER_JSP);
         dispatcher.forward(req, resp);
     }
 
